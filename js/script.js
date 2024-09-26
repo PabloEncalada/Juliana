@@ -1,4 +1,4 @@
-let track_index = 0;
+let track_index = 1;
 let isPlaying = false;
 let curr_track = document.createElement('audio');
 const songTitle = document.getElementById('song-title');
