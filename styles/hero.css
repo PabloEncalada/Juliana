@@ -310,7 +310,7 @@ p{
 
 
   @media (max-width: 1020px){}
-
+/*
   @media (max-width: 720px){
     .hero-text h1{
         padding-bottom: 500px;
@@ -327,7 +327,7 @@ p{
         position: absolute;
         bottom: 0%;
         width: 100%;
-        height: 100px; /* Ajusta esto según tus necesidades */
+        height: 100px; 
         display: flex;
         justify-content: center;
         align-items: center;
@@ -383,10 +383,10 @@ p{
     .box2{
         display: none;
         position: absolute;
-        width:105%; /* Fixed width */
+        width:105%;
         height: 55%;
         border-radius: 0px;
-        /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
+    
         border:1px solid black;
         top: -1%;
         left: -1%;
@@ -396,10 +396,9 @@ p{
     .box3{
         display: none;
         position: absolute;
-        width: 105%; /* Fixed width */
+        width: 105%;
         height: 50%;
         border-radius: 0px;
-        /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
         border:0px solid black;
         bottom: -1%;
         right: -1%;
@@ -415,3 +414,4 @@ p{
     }
     
   }
+*/
