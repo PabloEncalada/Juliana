@@ -279,7 +279,7 @@ p{
 
 .hero-text h1{
     padding-bottom: 20px;
-    font-size: 150px;
+    font-size: 9.375rem;
     margin: 0;
     font-family: 'Spirax', sans-serif;
     font-weight: lighter;
@@ -308,3 +308,109 @@ p{
   }
 
 
+  @media (max-width: 1020px){}
+
+  @media (max-width: 720px){
+    .hero-text h1{
+        padding-bottom: 500px;
+        font-size: 7rem;
+        margin: 0;
+        font-family: 'Spirax', sans-serif;
+        font-weight: lighter;
+        color: #ffffff;
+
+    }
+
+    .text-container {
+        margin-top: 30px;
+        position: absolute;
+        bottom: 0%;
+        width: 100%;
+        height: 100px; /* Ajusta esto según tus necesidades */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow-wrap: break-word;
+        
+    }
+    .text-container p{
+        text-shadow: 2px 2px 4px #0000005f;
+        color: #ffffff;
+        font-size: 40px;
+        
+    }
+
+    .hero-button {
+        position: absolute;
+        top: 50%;
+        left: 30%;
+        background-color: #129654;
+        border: none;
+        color: #ffffff;
+        border-radius: 24px;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 15px;
+
+    }
+
+    .box1 {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+
+        width: 90%;
+        min-height: 90%;
+  
+        height: 24rem;
+        padding-top: 0;
+        padding-bottom: 3%;
+        text-align: center;
+        border-radius: 15px;
+        box-shadow: none;
+        border: 0px solid black;
+        background-color: rgba(255, 255, 255, 0);
+        opacity: 0;
+        animation: fadeIn 3s ease forwards;
+        gap:100rem ;
+        
+    }
+    .musicBox{
+        background-color: #ffffff;
+    }
+    .box2{
+        display: none;
+        position: absolute;
+        width:105%; /* Fixed width */
+        height: 55%;
+        border-radius: 0px;
+        /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
+        border:1px solid black;
+        top: -1%;
+        left: -1%;
+        opacity: 0;
+        transition: opacity 2s ease;
+    }
+    .box3{
+        display: none;
+        position: absolute;
+        width: 105%; /* Fixed width */
+        height: 50%;
+        border-radius: 0px;
+        /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
+        border:0px solid black;
+        bottom: -1%;
+        right: -1%;
+        opacity: 0;
+        transition: opacity 2s ease;
+    }
+    .video{
+        border-radius: 0px;
+        background: linear-gradient (to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+    }
+    .container{
+        padding-bottom: 10px;
+    }
+    
+  }
