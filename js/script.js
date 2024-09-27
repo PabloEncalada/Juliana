@@ -1,4 +1,4 @@
-let track_index = 1;
+let track_index = 0;
 let isPlaying = false;
 let curr_track = document.createElement('audio');
 const songTitle = document.getElementById('song-title');
@@ -78,6 +78,8 @@ function playPrevious() {
 }
 
 function mostrarBox() {
+    const textElement = document.getElementById('textoH1');
+    textElement.style.textShadow = '2px 2px 5px rgba(0, 0, 0, 0.7)';
     loadTrack(track_index);
     curr_track.play();
     heroButton.style.display = "none";
