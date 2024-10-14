@@ -1,7 +1,27 @@
+
 body{
-    margin: 0%;
+    height: 100vh;
+    width: 100vw;
     color: white;
     font-family: 'Simonetta', sans-serif;
+
+}
+.banner {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+}
+
+.hidden {
+    opacity: 0;
 }
 
 .container{
@@ -18,7 +38,7 @@ body{
 }
 
 
-.hero-button {
+.hero-button, hero-button-swipe {
     background-color: #444444;
     border: none;
     color: #ffffff;
@@ -41,6 +61,10 @@ body{
     transform: scale(0.98); 
     background-color: #444444;
 } 
+
+.hero-button-swipe{
+    display: none;
+}
 .box1 {
     position: absolute;
     display: flex;
@@ -102,7 +126,6 @@ body{
     height: 100%;
     object-fit: cover; /* Adjusts video size to cover the box */
     border-radius: 15px; /* Matches box corners */
-    pointer-event: none;
   }
 
 .box3{
@@ -310,10 +333,34 @@ p{
 
 
   @media (max-width: 1020px){}
-/*
+
   @media (max-width: 720px){
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body{
+        touch-action: none;
+      }
+      
+      /* Ensure full height */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        /* overflow: hidden; */
+        background-color: rgb(23, 23, 23);
+      }
+
+
+    .hero-text{
+        height: 100%;
+    }
+
     .hero-text h1{
-        padding-bottom: 500px;
+        /* padding-bottom: 300px; */
         font-size: 7rem;
         margin: 0;
         font-family: 'Spirax', sans-serif;
@@ -323,11 +370,11 @@ p{
     }
 
     .text-container {
-        margin-top: 30px;
+        /* margin-top: 30px; */
         position: absolute;
-        bottom: 0%;
+        bottom: 10%;
         width: 100%;
-        height: 100px; 
+        height: 100px; /* Ajusta esto según tus necesidades */
         display: flex;
         justify-content: center;
         align-items: center;
@@ -337,14 +384,20 @@ p{
     .text-container p{
         text-shadow: 2px 2px 4px #0000005f;
         color: #ffffff;
-        font-size: 40px;
+        font-size: 30px;
         
     }
 
-    .hero-button {
+    .hero-button{
+        display: none;
+    }
+
+
+    .hero-button-swipe {
+        display: block;
         position: absolute;
         top: 50%;
-        left: 30%;
+        left: 36%;
         background-color: #129654;
         border: none;
         color: #ffffff;
@@ -354,6 +407,39 @@ p{
         text-decoration: none;
         font-size: 15px;
 
+    }
+
+    .swipeMessage {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%; /* Center horizontally */
+        transform: translate(-50%, -50%); /* Center vertically */
+        border: none;
+        color: #ffffff; /* White color for text */
+        border-radius: 24px; /* Rounded corners */
+        padding: 15px 32px; /* Padding for inner space */
+        text-align: center; /* Center the text */
+        text-decoration: none; /* No underline on text */
+        font-size: 20px; /* Font size */
+        font-weight: bold; /* Make font bold */
+        background: linear-gradient(180deg, rgb(17, 148, 83), rgb(27, 232, 129)); /* Gradient background */
+        animation: moveUp 3s ease-in-out infinite; /* Animation for upward movement */
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+        z-index: 10; /* Ensure it appears above other elements */
+    }
+    
+    /* Keyframes for upward animation */
+    @keyframes moveUp {
+        0% {
+            transform: translate(-50%, -50%);
+        }
+        50% {
+            transform: translate(-50%, -80%); /* Move up slightly */
+        }
+        100% {
+            transform: translate(-50%, -50%); /* Return to original position */
+        }
     }
 
     .box1 {
@@ -379,14 +465,17 @@ p{
     }
     .musicBox{
         background-color: #ffffff;
+        left: 8%;
+        bottom: 3%;
     }
     .box2{
+        margin-top: 0px;
         display: none;
         position: absolute;
-        width:105%;
+        width:110%; /* Fixed width */
         height: 55%;
         border-radius: 0px;
-    
+        /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
         border:1px solid black;
         top: -1%;
         left: -1%;
@@ -394,24 +483,37 @@ p{
         transition: opacity 2s ease;
     }
     .box3{
+        margin-bottom: 0px;
         display: none;
         position: absolute;
-        width: 105%;
+        width: 110%; /* Fixed width */
         height: 50%;
         border-radius: 0px;
+        /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
         border:0px solid black;
         bottom: -1%;
-        right: -1%;
+        left: -1%;
         opacity: 0;
         transition: opacity 2s ease;
     }
     .video{
         border-radius: 0px;
-        background: linear-gradient (to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+        pointer-events: none;
+        max-width: 100%;
+
     }
     .container{
         padding-bottom: 10px;
+        margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    /* Extend content into the notch area */
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+
     }
     
   }
-*/
