@@ -1,15 +1,78 @@
-let track_index = 1;
+let track_index = 0;
 let isPlaying = false;
 let curr_track = document.createElement('audio');
 const songTitle = document.getElementById('song-title');
 const artistName = document.getElementById('artist-name');
 const heroButton = document.querySelector('.hero-button');
+const heroButtonSwipe = document.querySelector('.hero-button-swipe');
+
+
+
+window.onload = function() {
+    // Get the banner element
+    var banner = document.getElementById('banner');
+    
+    // Set a timeout to hide the banner after 5 seconds (5000 milliseconds)
+    setTimeout(function() {
+        banner.classList.add('hidden');
+    }, 8000);
+
+};
+
+
+function tap(){
+    document.body.style.touchAction = "none"; 
+    heroButtonSwipe.style.display = "none"
+    heroButtonSwipe.className = "swipeMessage";
+    heroButtonSwipe.textContent = "";
+    setTimeout(function() {
+        
+        document.body.style.touchAction = "pan-y";
+        heroButtonSwipe.textContent = "Swipe up";
+        heroButtonSwipe.style.display = "block"
+         // Set up swipe detection
+        setupSwipeDetection(); // Call the function to set up swipe detection
+    }, 1000);
+    
+   
+}
+
+function setupSwipeDetection() {
+    let startY = 0;
+    const swipeThreshold = 100; // Minimum distance for swipe to be considered valid
+    let swipePerformed = false; // Flag to prevent multiple swipes
+
+    // Touch start event listener
+    document.addEventListener('touchstart', (event) => {
+        if (swipePerformed) return; // Prevent further touch interactions if swipe is done
+        startY = event.touches[0].clientY;
+    });
+
+    // Touch end event listener
+    document.addEventListener('touchend', (event) => {
+        if (swipePerformed) return; // Prevent further swipe actions
+
+        const endY = event.changedTouches[0].clientY;
+        const distanceY = startY - endY;
+
+        // Check if the swipe was upwards and exceeds the threshold
+        if (distanceY > swipeThreshold) {
+            mostrarBox(); // Call the function to show the box
+            swipePerformed = true; // Set the flag to prevent future swipes
+        }
+    });
+}
 
 const music_list = [
     {
+        name : 'te quiero tanto',
+        artist : 'Kevin Kaarl',
+        music : 'assets/music/audio.mp3'
+    },
+    {
         name : 'The Day That I Met You',
         artist : 'Matilda Mann',
-        music : 'assets/music/audio.mp3'
+        music : 'assets/music/audio1.mp3'
     },
     {
         name : 'Mia & Sebastian’s Theme',
@@ -17,8 +80,8 @@ const music_list = [
         music : 'assets/music/audio2.mp3'
     },
     {
-        name : 'La Niebla',
-        artist : 'WOS',
+        name : 'TU MANTA',
+        artist : 'Milo J',
         music : 'assets/music/audio3.mp3'
     }
 
@@ -78,12 +141,14 @@ function playPrevious() {
 }
 
 function mostrarBox() {
+    document.body.style.touchAction = "none";
     const textElement = document.getElementById('textoH1');
     textElement.style.textShadow = '2px 2px 5px rgba(0, 0, 0, 0.7)';
     loadTrack(track_index);
     curr_track.play();
     heroButton.style.display = "none";
     heroButton.style.background = "none";
+    heroButtonSwipe.style.display = "none";
     var box2 = document.getElementById("box2");
     var box3 = document.getElementById("box3");
     box2.style.display = "none";
@@ -111,7 +176,7 @@ function mostrarBox() {
     }
     
     setTimeout(() => {
-        showNextPhrase();;
+        showNextPhrase();
     }, 5000);
     heroButton.style.background = "#444444";
     
@@ -125,7 +190,7 @@ function mostrarBox() {
 
     function showNextPhrase() {
         // Check if we should stop the phrase transitions
-        if (currentIndex === 4) {
+        if (currentIndex === 10) {
             phrases[currentIndex].classList.add('show');
             phrases[currentIndex].style.opacity = 1;
             return; // Stop further execution
