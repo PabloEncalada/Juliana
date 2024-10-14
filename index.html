@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Juliana Zambrano</title>
     <link rel="stylesheet" href="styles/hero.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Spirax&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <link rel="icon" href="/assets/favicon.ico">
     
 </head>
 <!-- Google tag (gtag.js) -->
@@ -24,11 +24,14 @@
 
     <section id="home" class="hero-section">
         <div class="container">
-         <div id = "box2", class="box2">
-            <video class="video" src="assets/video1.mp4" autoplay muted loop></video>
+          <div id="banner" class="banner">
+            Ahora disponible para movil.
+        </div>
+         <div id = "box2" class="box2">
+            <video playsinline class="video" src="assets/video1.mp4" autoplay muted loop></video>
          </div>
-         <div id = "box3", class="box3">
-          <video class="video" src="assets/video3.mp4" autoplay muted loop></video>
+         <div id = "box3" class="box3">
+          <video playsinline class="video" src="assets/video3.mp4" autoplay muted loop></video>
           </div>
          <div class="box1">
           <div class="hero-text">
@@ -38,18 +41,29 @@
 
             <div class="text-container">
               <p class="fade-in">
-                A veces me gana el miedo,<span style="color: #3d85c6;">sobre que pasará mañana...</span>
-            </p>
-            
+                <span style="color: #3d85c6;">A veces me gana el miedo,sobre que pasará mañana...</span>
+              </p>
               <p class="fade-in">o la nostalgia por todo lo que <span style="color: #d6503b;"> ya paso...</span></p>
               <p class="fade-in">pero cuando estoy un rato <span style="color: #fa8072;">contigo</span></p>
               <p class="fade-in">me haces disfrutar...</p>
               <p class="fade-in" style="color: gold; font-weight: bold;" >el presente.</p>
+
+              <p class="fade-in"><span style="color: #3d85c6;">Siempre</span> me hiciste sentir acompañado.</p>
+              <p class="fade-in">
+                Te quise tanto tanto...
+              </p>
+              <p class="fade-in">Te quiero <span style="color: #d6503b;">todavia.</span></p>
+              <p class="fade-in">Y se que te querre por mucho tiempo.</span></p>
+              <p class="fade-in" >Por que eres la puerta que no quiero cerrar.</p>
+              <p class="fade-in" style="color: #ff6877;font-weight: bold;"> 
+                Te quiero mucho.
+              </p>
             </div>
 
             
             
-            <button onclick="mostrarBox()", class="hero-button">START</button>
+            <button onclick="mostrarBox()" class="hero-button">START</button>
+            <button onclick="tap()" class="hero-button-swipe">TAP</button>
           </div>
          </div>
          <div class = "musicBox">
@@ -103,7 +117,7 @@
          
       </section>
 
-      <section id="home" class="hero-section">
+      <!-- <section id="home" class="hero-section">
         <div class="container">
 
             <p class="fade-in">Primera frase.</p>
@@ -112,17 +126,9 @@
             <p class="fade-in">Cuarta frase.</p>
 
         </div>
-      </section>
+      </section> -->
 
-      <section id="home" class="hero-section">
-        <div class="container">
-        </div>
-      </section>
 
-      <section id="home" class="hero-section">
-        <div class="container">
-        </div>
-      </section>
     
 </body>
 <script src="js/script.js"></script>
