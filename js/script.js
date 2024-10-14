@@ -141,7 +141,7 @@ function playPrevious() {
 }
 
 function mostrarBox() {
-    document.body.style.touchAction = "none";
+    //document.body.style.touchAction = "none";
     const textElement = document.getElementById('textoH1');
     textElement.style.textShadow = '2px 2px 5px rgba(0, 0, 0, 0.7)';
     loadTrack(track_index);
