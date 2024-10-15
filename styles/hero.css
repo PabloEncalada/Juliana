@@ -340,6 +340,7 @@ p{
         padding: 0;
         box-sizing: border-box;
       }
+
       body{
         touch-action: none;
       }
@@ -442,6 +443,9 @@ p{
         }
     }
 
+    .box1 p {
+        padding-left: 0;
+    }
     .box1 {
         position: absolute;
         display: flex;
