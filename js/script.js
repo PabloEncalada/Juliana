@@ -190,7 +190,7 @@ function mostrarBox() {
 
     function showNextPhrase() {
         // Check if we should stop the phrase transitions
-        if (currentIndex === 10) {
+        if (currentIndex === 4) {
             phrases[currentIndex].classList.add('show');
             phrases[currentIndex].style.opacity = 1;
             return; // Stop further execution
