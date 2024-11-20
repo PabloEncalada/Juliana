@@ -197,7 +197,7 @@ function mostrarBox() {
 
 
     function showNextPhrase() {
-        if (currentIndex === 16) {
+        if (currentIndex === 21) {
             phrases[currentIndex].classList.add('show');
             phrases[currentIndex].style.opacity = 1;
             return;
